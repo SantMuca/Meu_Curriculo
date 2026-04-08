@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel Santos Ramos | Portfólio ADS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="tooltip">Clique para saber mais</div>
+
+    <div class="profile-header">
+        <img src="foto_samuel.png" alt="Samuel Santos Ramos" class="profile-img">
+        <h1>Samuel Santos Ramos</h1>
+        <p class="tagline">"Tecnologia e infraestrutura para soluções eficientes"</p>
+        
+        <div class="header-contacts">
+            <a href="mailto:samuckrex@gmail.com" class="contact-link">samuckrex@gmail.com</a> | 
+            <a href="tel:5511993372774" class="contact-link">(11) 99337-2774</a> | 
+            <span>São Paulo - SP</span>
+        </div>
+    </div>
+
+    <div class="content-box" id="mainDisplay">
+        </div>
+
+    <nav class="nav-menu">
+        <button class="nav-btn active" onclick="updateContent('resumo')">Resumo</button>
+        <button class="nav-btn" onclick="updateContent('experiencias')">Experiências</button>
+        <button class="nav-btn" onclick="updateContent('habilidades')">Habilidades</button>
+        <button class="nav-btn" onclick="updateContent('cursos')">Cursos</button>
+        <button class="nav-btn" onclick="updateContent('redes')">Redes Sociais</button>
+    </nav>
+
+    <script>
+        const content = {
+            resumo: `<h3>Resumo Profissional</h3>
+                     <p>Graduado em Análise e Desenvolvimento de Sistemas (2025). Carreira em evolução na área de TI e Administrativa, com sólida experiência em suporte técnico, gestão de processos e faturamento.</p>
+                     <p>Aptidão para métodos de controle de custos e bens patrimoniais, organização de fluxos documentais e atendimento especializado ao cliente.</p>`,
+            
+            experiencias: `<h3>Experiências Profissionais</h3>
+                            <div class="accordion">
+                                <div class="accordion-item" onclick="toggleExp(this)">
+                                    <div class="accordion-header">
+                                        <span class="date">10/11/2025 - 04/02/2026</span><br>
+                                        <b>SPDM</b> - Auxiliar Administrativo
+                                    </div>
+                                    <div class="accordion-content">
+                                        <p>Gestão de rotinas administrativas, controle de acesso a setores estratégicos e zeladoria do arquivo de documentos. Responsável por processos de reprografia e faturamento hospitalar.</p>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" onclick="toggleExp(this)">
+                                    <div class="accordion-header">
+                                        <span class="date">08/07/2024 - 30/09/2025</span><br>
+                                        <b>GoWork (Go Offices Latam)</b> - Aprendiz Administrativo
+                                    </div>
+                                    <div class="accordion-content">
+                                        <p>Atuação no Departamento Pessoal e Recepção. Responsável pelo registro de colaboradores, organização documental, faturamento e apresentação técnica das unidades para clientes.</p>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item" onclick="toggleExp(this)">
+                                    <div class="accordion-header">
+                                        <span class="date">17/10/2022 - 16/01/2024</span><br>
+                                        <b>Humania (Grupo Viveo)</b> - Aprendiz Administrativo
+                                    </div>
+                                    <div class="accordion-content">
+                                        <p>Faturamento e análise de notas fiscais. Interface direta com clínicas e laboratórios para validação de prescrições médicas e dados contratuais.</p>
+                                    </div>
+                                </div>
+                            </div>`,
+
+            habilidades: `<h3>Habilidades Técnicas</h3>
+                          <ul>
+                              <li><b>Infraestrutura:</b> Active Directory, Windows Server, SQL Server, Redes TCP/IP.</li>
+                              <li><b>Desenvolvimento:</b> HTML5, CSS3, React, JavaScript, Python, Metodologias Ágeis.</li>
+                              <li><b>Hardware:</b> Montagem e manutenção de PCs, Notebooks e Consoles.</li>
+                              <li><b>Ferramentas:</b> Salesforce, Excel Intermediário, Power BI.</li>
+                          </ul>`,
+
+            cursos: `<h3>Formação e Extensão</h3>
+                     <ul>
+                         <li><b>Superior:</b> Análise e Desenvolvimento de Sistemas - UNIP (Concluído em 2025).</li>
+                         <li><b>Inglês:</b> King of Languages (Em andamento - Início em 13/04/2026).</li>
+                         <li><b>SENAI:</b> Montagem e Manutenção de Microcomputadores (Em andamento - Início em 22/04/2026).</li>
+                         <li><b>Alura:</b> Imersão Dev Front-End e Mobile.</li>
+                         <li><b>Fundação Bradesco:</b> Design Gráfico e Atendimento ao Público.</li>
+                     </ul>`,
+
+            redes: `<h3>Redes Sociais</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/samuel-santos-ramos-b73241211" target="_blank" class="social-btn">LinkedIn</a>
+                        <a href="https://github.com/SantMuca" target="_blank" class="social-btn">GitHub</a>
+                    </div>`
+        };
+
+        const tooltip = document.getElementById('tooltip');
+
+        window.onload = () => updateContent('resumo');
+
+        function updateContent(section) {
+            const display = document.getElementById('mainDisplay');
+            display.innerHTML = content[section];
+            
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            const btnText = section === 'redes' ? 'redes' : section.substring(0,3);
+            const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => btn.innerText.toLowerCase().includes(btnText));
+            if(activeBtn) activeBtn.classList.add('active');
+
+            if(section === 'experiencias') {
+                setupTooltip();
+            } else {
+                tooltip.style.display = 'none';
+            }
+        }
+
+        function toggleExp(element) {
+            const allItems = document.querySelectorAll('.accordion-item');
+            allItems.forEach(item => {
+                if (item !== element) item.classList.remove('active');
+            });
+            element.classList.toggle('active');
+            tooltip.style.display = 'none';
+        }
+
+        document.addEventListener('mousemove', (e) => {
+            tooltip.style.left = e.pageX + 15 + 'px';
+            tooltip.style.top = e.pageY + 15 + 'px';
+        });
+
+        function setupTooltip() {
+            const items = document.querySelectorAll('.accordion-item');
+            items.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    if(!item.classList.contains('active')) tooltip.style.display = 'block';
+                });
+                item.addEventListener('mouseleave', () => {
+                    tooltip.style.display = 'none';
+                });
+            });
+        }
+    </script>
+</body>
+</html>
