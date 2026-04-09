@@ -11,6 +11,10 @@
 </head>
 <body>
 
+    <a href="https://wa.me/5511993372774" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
     <div id="tooltip">Clique para saber mais</div>
 
     <div class="profile-header">
@@ -39,55 +43,60 @@
     <script>
         const content = {
             resumo: `<h3>Resumo Profissional</h3>
-                     <p>Graduado em Análise e Desenvolvimento de Sistemas (2025). Carreira em evolução na área de TI e Administrativa, com sólida experiência em suporte técnico, gestão de processos e faturamento.</p>
-                     <p>Aptidão para métodos de controle de custos e bens patrimoniais, organização de fluxos documentais e atendimento especializado ao cliente.</p>`,
+                     <p>Graduado em Análise e Desenvolvimento de Sistemas (2025). Carreira em evolução na área de TI e Administrativa, com experiência em suporte técnico, gestão de processos e faturamento. Possuo aptidão para métodos de controle de custos e organização de fluxos documentais. No campo tecnológico, possuo conhecimentos em desenvolvimento backend como Python, C. Possuo conhecimento básico em banco de dados (SQL Server), além de conhecimentos em desenvolvimento de Front-End (HTML, CSS, Java Script e React.</p>`,
             
             experiencias: `<h3>Experiências Profissionais</h3>
-                            <div class="accordion">
-                                <div class="accordion-item" onclick="toggleExp(this)">
-                                    <div class="accordion-header">
-                                        <span class="date">10/11/2025 - 04/02/2026</span><br>
-                                        <b>SPDM</b> - Auxiliar Administrativo
+                            <div class="experience-slider-container">
+                                <div class="experience-slider-track">
+                                    <div class="experience-slide active">
+                                        <div class="experience-item-header">
+                                            <span class="date">10/11/2025 - 04/02/2026</span><br>
+                                            <b>SPDM</b> - Auxiliar Administrativo
+                                        </div>
+                                        <div class="experience-item-content">
+                                            <p>Gestão de rotinas administrativas, controle de acesso a setores estratégicos e zeladoria do arquivo de documentos. Responsável por processos de reprografia e faturamento hospitalar.</p>
+                                        </div>
                                     </div>
-                                    <div class="accordion-content">
-                                        <p>Gestão de rotinas administrativas, controle de acesso a setores estratégicos e zeladoria do arquivo de documentos. Responsável por processos de reprografia e faturamento hospitalar.</p>
+
+                                    <div class="experience-slide">
+                                        <div class="experience-item-header">
+                                            <span class="date">08/07/2024 - 30/09/2025</span><br>
+                                            <b>GoWork (Go Offices Latam)</b> - Aprendiz Administrativo
+                                        </div>
+                                        <div class="experience-item-content">
+                                            <p>Atuação no Departamento Pessoal e Recepção. Responsável pelo registro de colaboradores, organização documental, faturamento e apresentação técnica das unidades para clientes.</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="experience-slide">
+                                        <div class="experience-item-header">
+                                            <span class="date">17/10/2022 - 16/01/2024</span><br>
+                                            <b>Humania (Grupo Viveo)</b> - Aprendiz Administrativo
+                                        </div>
+                                        <div class="experience-item-content">
+                                            <p>Faturamento e análise de notas fiscais. Interface direta com clínicas e laboratórios para validação de prescrições médicas e dados contratuais.</p>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <div class="accordion-item" onclick="toggleExp(this)">
-                                    <div class="accordion-header">
-                                        <span class="date">08/07/2024 - 30/09/2025</span><br>
-                                        <b>GoWork (Go Offices Latam)</b> - Aprendiz Administrativo
-                                    </div>
-                                    <div class="accordion-content">
-                                        <p>Atuação no Departamento Pessoal e Recepção. Responsável pelo registro de colaboradores, organização documental, faturamento e apresentação técnica das unidades para clientes.</p>
-                                    </div>
-                                </div>
-
-                                <div class="accordion-item" onclick="toggleExp(this)">
-                                    <div class="accordion-header">
-                                        <span class="date">17/10/2022 - 16/01/2024</span><br>
-                                        <b>Humania (Grupo Viveo)</b> - Aprendiz Administrativo
-                                    </div>
-                                    <div class="accordion-content">
-                                        <p>Faturamento e análise de notas fiscais. Interface direta com clínicas e laboratórios para validação de prescrições médicas e dados contratuais.</p>
-                                    </div>
+                                <div class="experience-slider-nav">
+                                    <button class="slider-btn prev" onclick="changeExperienceSlide(-1)">&#10094;</button>
+                                    <button class="slider-btn next" onclick="changeExperienceSlide(1)">&#10095;</button>
                                 </div>
                             </div>`,
 
             habilidades: `<h3>Habilidades Técnicas</h3>
                           <ul>
-                              <li><b>Infraestrutura:</b> Active Directory, Windows Server, SQL Server, Redes TCP/IP.</li>
-                              <li><b>Desenvolvimento:</b> HTML5, CSS3, React, JavaScript, Python, Metodologias Ágeis.</li>
-                              <li><b>Hardware:</b> Montagem e manutenção de PCs, Notebooks e Consoles.</li>
-                              <li><b>Ferramentas:</b> Salesforce, Excel Intermediário, Power BI.</li>
+                              <li><b>Infraestrutura:</b> SQL Server, Redes TCP/IP.</li>
+                              <li><b>Desenvolvimento:</b> HTML, CSS, React, JavaScript, Python, C e Metodologias Ágeis.</li>
+                              <li><b>Hardware:</b> Montagem e manutenção de PCs e Notebooks.</li>
+                              <li><b>Ferramentas:</b> Salesforce, Excel Intermediário.</li>
                           </ul>`,
 
             cursos: `<h3>Formação e Extensão</h3>
                      <ul>
-                         <li><b>Superior:</b> Análise e Desenvolvimento de Sistemas - UNIP (Concluído em 2025).</li>
-                         <li><b>Inglês:</b> King of Languages (Em andamento - Início em 13/04/2026).</li>
-                         <li><b>SENAI:</b> Montagem e Manutenção de Microcomputadores (Em andamento - Início em 22/04/2026).</li>
+                         <li><b>Superior:</b> ADS - UNIP (Concluído em 2025).</li>
+                         <li><b>Inglês:</b> King of Languages (Em andamento - Início em 13/04).</li>
+                         <li><b>SENAI:</b> Manutenção de Microcomputadores (Em andamento - Início em 22/04).</li>
                          <li><b>Alura:</b> Imersão Dev Front-End e Mobile.</li>
                          <li><b>Fundação Bradesco:</b> Design Gráfico e Atendimento ao Público.</li>
                      </ul>`,
@@ -100,33 +109,55 @@
         };
 
         const tooltip = document.getElementById('tooltip');
-
         window.onload = () => updateContent('resumo');
+
+        let currentExperienceSlideIndex = 0;
+
+        function changeExperienceSlide(n) {
+            const slides = document.querySelectorAll('.experience-slide');
+            if (slides.length === 0) return; // Segurança
+
+            currentExperienceSlideIndex += n;
+
+            if (currentExperienceSlideIndex >= slides.length) currentExperienceSlideIndex = 0;
+            if (currentExperienceSlideIndex < 0) currentExperienceSlideIndex = slides.length - 1;
+
+            showExperienceSlide();
+        }
+
+        function showExperienceSlide() {
+            const slides = document.querySelectorAll('.experience-slide');
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+            if (slides.length > 0) {
+                slides[currentExperienceSlideIndex].classList.add('active');
+            }
+        }
 
         function updateContent(section) {
             const display = document.getElementById('mainDisplay');
             display.innerHTML = content[section];
             
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-            const btnText = section === 'redes' ? 'redes' : section.substring(0,3);
-            const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => btn.innerText.toLowerCase().includes(btnText));
+            // Remove 'active' class de todos os botões de navegação
+            document.querySelectorAll('.nav-menu .nav-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Encontra o botão correspondente e adiciona 'active'
+            const activeBtn = Array.from(document.querySelectorAll('.nav-menu .nav-btn')).find(btn => btn.innerText.toLowerCase().includes(section === 'redes' ? 'redes' : section.substring(0,3)));
             if(activeBtn) activeBtn.classList.add('active');
 
+            // Lógica para inicializar o slider de experiências
             if(section === 'experiencias') {
-                setupTooltip();
+                currentExperienceSlideIndex = 0; // Reiniciar
+                showExperienceSlide(); // Mostrar o primeiro
+                // Mantemos o tooltip ativo para os outros elementos, mas ele não funcionará nos botões agora, apenas na área de conteúdo
+                setupTooltip(); 
             } else {
                 tooltip.style.display = 'none';
             }
         }
 
-        function toggleExp(element) {
-            const allItems = document.querySelectorAll('.accordion-item');
-            allItems.forEach(item => {
-                if (item !== element) item.classList.remove('active');
-            });
-            element.classList.toggle('active');
-            tooltip.style.display = 'none';
-        }
+        // Função toggleExp removida por não ser mais necessária
 
         document.addEventListener('mousemove', (e) => {
             tooltip.style.left = e.pageX + 15 + 'px';
@@ -134,14 +165,10 @@
         });
 
         function setupTooltip() {
-            const items = document.querySelectorAll('.accordion-item');
+            const items = document.querySelectorAll('.nav-menu .nav-btn'); // Atribuindo o tooltip aos botões de navegação
             items.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    if(!item.classList.contains('active')) tooltip.style.display = 'block';
-                });
-                item.addEventListener('mouseleave', () => {
-                    tooltip.style.display = 'none';
-                });
+                item.addEventListener('mouseenter', () => { if(!item.classList.contains('active')) tooltip.style.display = 'block'; });
+                item.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
             });
         }
     </script>
