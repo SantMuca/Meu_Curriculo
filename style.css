@@ -16,57 +16,32 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    background-image: radial-gradient(circle at 15% 25%, rgba(160, 32, 240, 0.2) 0%, transparent 45%),
-                      radial-gradient(circle at 85% 75%, rgba(0, 0, 255, 0.1) 0%, transparent 45%);
+    /* FUNDO ALTERADO ABAIXO */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
-/* Botão WhatsApp Flutuante */
+/* Botão WhatsApp */
 .whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--whatsapp);
-    color: #FFF;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(37, 211, 102, 0.3);
-    z-index: 10000;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+    background-color: var(--whatsapp); border-radius: 50px; display: flex;
+    align-items: center; justify-content: center; z-index: 10000;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); transition: 0.3s;
 }
-
-.whatsapp-float img {
-    width: 35px;
-    height: 35px;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 0 30px rgba(37, 211, 102, 0.8);
-}
+.whatsapp-float:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 0 30px var(--whatsapp); }
+.whatsapp-float img { width: 35px; }
 
 #tooltip {
-    position: absolute;
-    display: none;
-    background: var(--purple-neon);
-    color: white;
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-family: 'Play', sans-serif;
-    font-size: 0.7rem;
-    font-weight: bold;
-    pointer-events: none;
-    z-index: 9999;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
-    text-transform: uppercase;
+    position: absolute; display: none; background: var(--purple-neon); color: white;
+    padding: 6px 14px; border-radius: 8px; font-family: 'Play', sans-serif;
+    font-size: 0.7rem; font-weight: bold; pointer-events: none; z-index: 9999;
 }
 
 .profile-header { text-align: center; margin-top: 50px; }
-.header-contacts { font-size: 0.85rem; color: var(--text-dim); margin-top: 15px; }
-.contact-link { color: var(--text-dim); text-decoration: none; transition: 0.3s; }
+.header-contacts { font-size: 0.85rem; color: white; margin-top: 15px; }
+.contact-link { color: white; text-decoration: none; transition: 0.3s; }
 .contact-link:hover { color: var(--purple-neon); text-shadow: 0 0 8px var(--purple-neon); }
 
 .profile-img {
@@ -82,103 +57,100 @@ h1 {
 
 .content-box {
     background: var(--glass); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
-    border: 1px solid rgba(255, 255, 255, 0.1); padding: 35px; width: 85%;
+    border: 2px solid rgba(255, 255, 255, 0.1); padding: 35px; width: 85%;
     max-width: 750px; min-height: 280px; border-radius: 24px; margin: 30px 0;
+    box-sizing: border-box;
 }
 
 .nav-menu { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 60px; }
 .nav-btn {
     font-family: 'Play', sans-serif; font-weight: 700; background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(160, 32, 240, 0.3); color: white; padding: 14px 24px;
+    border: 2px solid rgba(160, 32, 240, 0.3); color: white; padding: 14px 24px;
     border-radius: 14px; cursor: pointer; transition: 0.3s; font-size: 0.8rem; text-transform: uppercase;
 }
 .nav-btn:hover, .nav-btn.active { background: var(--purple-neon); transform: translateY(-5px); }
 
-/* Novos estilos de slider para experiências */
-.experience-slider-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
+/* Slider */
+.slider-container { position: relative; width: 100%; box-sizing: border-box; }
+.slider-track { min-height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 
-.experience-slider-track {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    min-height: 250px;
-    position: relative;
+.slide { 
+    display: none; 
+    width: 100%; 
+    animation: fadeIn 0.5s ease; 
+    box-sizing: border-box;
+    padding-right: 25px;
 }
+.slide.active { display: block; }
 
-.experience-slide {
-    display: none; /* Ocultar por padrão */
-    flex: 0 0 100%;
-    width: 100%;
-    padding: 20px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+.exp-header { border-left: 3px solid var(--purple-neon); padding-left: 15px; margin-bottom: 15px; }
+.date { color: var(--purple-neon); font-family: 'Play', sans-serif; font-weight: bold; font-size: 0.85rem; }
 
-.experience-slide.active {
-    display: block; /* Mostrar ativo */
-    opacity: 1;
-    position: relative; /* Para ocupar espaço no track */
+.slider-nav { display: flex; gap: 20px; justify-content: center; margin-top: 20px; }
+.slide-ctrl {
+    background: rgba(255, 255, 255, 0.05); border: 1px solid var(--purple-neon);
+    color: white; width: 45px; height: 45px; border-radius: 50%; cursor: pointer;
+    transition: 0.3s; font-size: 1.2rem;
 }
+.slide-ctrl:hover { background: var(--purple-neon); box-shadow: 0 0 15px var(--purple-neon); }
 
-.experience-item-header {
-    margin-bottom: 15px;
-    border-left: 3px solid var(--purple-neon);
-    padding-left: 15px;
-}
-
-.experience-item-content p {
-    color: var(--text-dim);
-    line-height: 1.6;
-}
-
-/* Estilo das setas de navegação */
-.experience-slider-nav {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.slider-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(160, 32, 240, 0.3);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    box-shadow: 0 0 10px rgba(160, 32, 240, 0);
-}
-
-.slider-btn:hover {
-    background: var(--purple-neon);
-    border-color: var(--purple-neon);
-    box-shadow: 0 0 15px rgba(160, 32, 240, 0.6);
-    transform: translateY(-3px);
-}
-
-.social-links { display: flex; gap: 20px; margin-top: 20px; }
-.social-btn {
-    background: var(--purple-neon); color: white; text-decoration: none;
-    padding: 15px 30px; border-radius: 12px; font-family: 'Play', sans-serif; font-weight: bold; transition: 0.3s;
-}
-.social-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px var(--purple-neon); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
 ul { list-style: none; padding: 0; }
 li { margin-bottom: 15px; border-left: 2px solid var(--purple-neon); padding-left: 15px; }
+
+/* SEÇÃO DE REDES SOCIAIS */
+.social-links { 
+    display: flex; 
+    gap: 30px; 
+    margin-top: 30px; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+.social-btn {
+    background: rgba(160, 32, 240, 0.1);
+    border: 2px solid var(--purple-neon);
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 12px;
+    width: 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(160, 32, 240, 0.2);
+    -webkit-tap-highlight-color: transparent; 
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.social-label {
+    font-family: 'Play', sans-serif;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* INTERATIVIDADE */
+.social-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    background: var(--purple-neon);
+    box-shadow: 0 0 25px var(--purple-neon);
+}
+
+.social-btn:active {
+    transform: scale(0.95); /* Efeito de clique */
+    background: rgba(160, 32, 240, 0.8);
+    transition: all 0.1s ease;
+}
+
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-thumb { background: var(--purple-neon); border-radius: 10px; }

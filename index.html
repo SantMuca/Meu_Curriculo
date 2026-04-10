@@ -20,8 +20,8 @@
     <div class="profile-header">
         <img src="foto_samuel.png" alt="Samuel Santos Ramos" class="profile-img">
         <h1>Samuel Santos Ramos</h1>
-        
-        <div class="header-contacts">
+
+              <div class="header-contacts">
             <a href="mailto:samuckrex@gmail.com" class="contact-link">samuckrex@gmail.com</a> | 
             <a href="tel:5511993372774" class="contact-link">(11) 99337-2774</a> | 
             <span>São Paulo - SP</span>
@@ -42,51 +42,45 @@
     <script>
         const content = {
             resumo: `<h3>Resumo Profissional</h3>
-                     <p>Graduado em Análise e Desenvolvimento de Sistemas (2025). Carreira em evolução na área de TI e Administrativa, com experiência em suporte técnico, gestão de processos e faturamento. Possuo aptidão para métodos de controle de custos e organização de fluxos documentais. No campo tecnológico, possuo conhecimentos em desenvolvimento backend como Python, C. Possuo conhecimento básico em banco de dados (SQL Server), além de conhecimentos em desenvolvimento de Front-End (HTML, CSS, Java Script e React.</p>`,
+                     <p>Graduado em Análise e Desenvolvimento de Sistemas (12/2025). Carreira em evolução na área de TI e Administrativa, com experiência em suporte técnico, gestão de processos e faturamento. Aptidão para métodos de controle de custos e organização de fluxos documentais. No campo tecnológico, possuo conhecimentos em desenvolvimento backend (Python), também possuo conhecimentos em desenvolvimento de Front-End (HTML, CSS, Java Script e React). Atualmente, busco aprimorar meus conhecimentos básicos em banco de dados (SQL Server).</p>`,
             
             experiencias: `<h3>Experiências Profissionais</h3>
-                            <div class="experience-slider-container">
-                                <div class="experience-slider-track">
-                                    <div class="experience-slide active">
-                                        <div class="experience-item-header">
+                            <div class="slider-container">
+                                <div class="slider-track">
+                                    <div class="slide active">
+                                        <div class="exp-header">
                                             <span class="date">10/11/2025 - 04/02/2026</span><br>
                                             <b>SPDM</b> - Auxiliar Administrativo
                                         </div>
-                                        <div class="experience-item-content">
-                                            <p>Gestão de rotinas administrativas, controle de acesso a setores estratégicos e zeladoria do arquivo de documentos. Responsável por processos de reprografia e faturamento hospitalar.</p>
-                                        </div>
+                                        <p>Gestão de rotinas administrativas, controle de acesso através da administração de chaves, administração de malotes com itens de colaboradores, administrações das decorações do hospital, organização de documentos físicos e digitais, elaboração de planilhas em excel, contato via telefone ou presencial com diversos setores do ambiente hospitalar para resolução de dúvidas.</p>
                                     </div>
 
-                                    <div class="experience-slide">
-                                        <div class="experience-item-header">
+                                    <div class="slide">
+                                        <div class="exp-header">
                                             <span class="date">08/07/2024 - 30/09/2025</span><br>
                                             <b>GoWork (Go Offices Latam)</b> - Aprendiz Administrativo
                                         </div>
-                                        <div class="experience-item-content">
-                                            <p>Atuação no Departamento Pessoal e Recepção. Responsável pelo registro de colaboradores, organização documental, faturamento e apresentação técnica das unidades para clientes.</p>
-                                        </div>
+                                        <p>Atuação no Departamento Pessoal (Responsável pelo registro de colaboradores, organização documental dos colaboradores, agendamento de entrevistas, Auxílio em entrevistas, análise crítica de holerites e pontos, e organização de documentos recisórios) e Recepção (Recepcionar clientes e leads nas unidades, atuação em conjunto com o setor de suporte para resolução de chamados, e apresentação técnica das unidades para clientes.</p>
                                     </div>
 
-                                    <div class="experience-slide">
-                                        <div class="experience-item-header">
+                                    <div class="slide">
+                                        <div class="exp-header">
                                             <span class="date">17/10/2022 - 16/01/2024</span><br>
                                             <b>Humania (Grupo Viveo)</b> - Aprendiz Administrativo
                                         </div>
-                                        <div class="experience-item-content">
-                                            <p>Faturamento e análise de notas fiscais. Interface direta com clínicas e laboratórios para validação de prescrições médicas e dados contratuais.</p>
-                                        </div>
+                                        <p>Faturamento e análise completa de notas fiscais. Contato via telefone e WhatsApp com clínicas e laboratórios para resolução de dúvidas e solitação de correção das notas fiscais, auxílio ao setor de credenciamento para entrar em contato com leads, validação de prescrições médicas e dados contratuais.</p>
                                     </div>
                                 </div>
-                                <div class="experience-slider-nav">
-                                    <button class="slider-btn prev" onclick="changeExperienceSlide(-1)">&#10094;</button>
-                                    <button class="slider-btn next" onclick="changeExperienceSlide(1)">&#10095;</button>
+                                <div class="slider-nav">
+                                    <button class="slide-ctrl" onclick="moveSlide(-1)">&#10094;</button>
+                                    <button class="slide-ctrl" onclick="moveSlide(1)">&#10095;</button>
                                 </div>
                             </div>`,
 
             habilidades: `<h3>Habilidades Técnicas</h3>
                           <ul>
-                              <li><b>Infraestrutura:</b> SQL Server, Redes TCP/IP.</li>
-                              <li><b>Desenvolvimento:</b> HTML, CSS, React, JavaScript, Python, C e Metodologias Ágeis.</li>
+                              <li><b>Infraestrutura:</b> Noções de SQL, Redes TCP/IP.</li>
+                              <li><b>Desenvolvimento:</b> HTML, CSS, React, JavaScript, Python, Metodologias Ágeis.</li>
                               <li><b>Hardware:</b> Montagem e manutenção de PCs e Notebooks.</li>
                               <li><b>Ferramentas:</b> Salesforce, Excel Intermediário.</li>
                           </ul>`,
@@ -102,61 +96,47 @@
 
             redes: `<h3>Redes Sociais</h3>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/samuel-santos-ramos-b73241211" target="_blank" class="social-btn">LinkedIn</a>
-                        <a href="https://github.com/SantMuca" target="_blank" class="social-btn">GitHub</a>
+                        <a href="https://www.linkedin.com/in/samuel-santos-ramos-b73241211" target="_blank" class="social-btn linkedin-btn">
+                            <img src="foto_linkedin.png" alt="LinkedIn Logo" class="social-icon">
+                            <span class="social-label">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/SantMuca" target="_blank" class="social-btn github-btn">
+                            <img src="foto_github.png" alt="GitHub Logo" class="social-icon">
+                            <span class="social-label">GitHub</span>
+                        </a>
                     </div>`
         };
 
         const tooltip = document.getElementById('tooltip');
+        let currentSlide = 0;
+
         window.onload = () => updateContent('resumo');
-
-        let currentExperienceSlideIndex = 0;
-
-        function changeExperienceSlide(n) {
-            const slides = document.querySelectorAll('.experience-slide');
-            if (slides.length === 0) return; // Segurança
-
-            currentExperienceSlideIndex += n;
-
-            if (currentExperienceSlideIndex >= slides.length) currentExperienceSlideIndex = 0;
-            if (currentExperienceSlideIndex < 0) currentExperienceSlideIndex = slides.length - 1;
-
-            showExperienceSlide();
-        }
-
-        function showExperienceSlide() {
-            const slides = document.querySelectorAll('.experience-slide');
-            slides.forEach(slide => {
-                slide.classList.remove('active');
-            });
-            if (slides.length > 0) {
-                slides[currentExperienceSlideIndex].classList.add('active');
-            }
-        }
 
         function updateContent(section) {
             const display = document.getElementById('mainDisplay');
             display.innerHTML = content[section];
             
-            // Remove 'active' class de todos os botões de navegação
-            document.querySelectorAll('.nav-menu .nav-btn').forEach(btn => btn.classList.remove('active'));
-            
-            // Encontra o botão correspondente e adiciona 'active'
-            const activeBtn = Array.from(document.querySelectorAll('.nav-menu .nav-btn')).find(btn => btn.innerText.toLowerCase().includes(section === 'redes' ? 'redes' : section.substring(0,3)));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            const btnText = section === 'redes' ? 'redes' : section.substring(0,3);
+            const activeBtn = Array.from(document.querySelectorAll('.nav-btn')).find(btn => btn.innerText.toLowerCase().includes(btnText));
             if(activeBtn) activeBtn.classList.add('active');
 
-            // Lógica para inicializar o slider de experiências
             if(section === 'experiencias') {
-                currentExperienceSlideIndex = 0; // Reiniciar
-                showExperienceSlide(); // Mostrar o primeiro
-                // Mantemos o tooltip ativo para os outros elementos, mas ele não funcionará nos botões agora, apenas na área de conteúdo
-                setupTooltip(); 
+                currentSlide = 0;
+                setupTooltip();
             } else {
                 tooltip.style.display = 'none';
             }
         }
 
-        // Função toggleExp removida por não ser mais necessária
+        function moveSlide(direction) {
+            const slides = document.querySelectorAll('.slide');
+            if (slides.length > 0) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+        }
 
         document.addEventListener('mousemove', (e) => {
             tooltip.style.left = e.pageX + 15 + 'px';
@@ -164,10 +144,10 @@
         });
 
         function setupTooltip() {
-            const items = document.querySelectorAll('.nav-menu .nav-btn'); // Atribuindo o tooltip aos botões de navegação
-            items.forEach(item => {
-                item.addEventListener('mouseenter', () => { if(!item.classList.contains('active')) tooltip.style.display = 'block'; });
-                item.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => {
+                btn.onmouseenter = () => { if(!btn.classList.contains('active')) tooltip.style.display = 'block'; };
+                btn.onmouseleave = () => tooltip.style.display = 'none';
             });
         }
     </script>
